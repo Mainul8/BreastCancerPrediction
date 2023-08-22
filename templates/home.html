@@ -1,0 +1,50 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Breast Cancer Prediction</title>
+        <style>
+            ul {
+            list-style-type: none;
+            margin: -10px;
+            padding: 0;
+            background-color: #5f091c;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+        
+        body{
+            position: relative;
+            background-image: url("{%static 'breast.png'%}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100vh;
+        }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a>Breast Cancer Prediction System (Benign or Malignant)</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="predict/">Prediction</a></li>
+        </ul>
+    </body>
+</html>

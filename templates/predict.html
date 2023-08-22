@@ -1,0 +1,200 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Predict</title>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .main{
+            position:relative;
+            top:10px;
+            left:210px;
+            width:950px;
+            background-color:gainsboro;
+            align-items:center;
+            border-radius:2%;
+        }
+        div{
+            padding:25px;
+        }
+        input[type=submit]{
+            background-color:Black;
+            color:white;
+            cursor:pointer;
+            padding: 16px 32px;
+        }
+        h1{
+            font-size:40px;
+        }
+        h2{
+            font-size:30px;
+            color:DarkRed;
+        }
+            body{
+            position: relative;
+            background-image: url("{%static 'predict.jpg'%}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100vh;
+        }
+        </style>
+        
+    </head>
+    <body style="text-align: center">
+        <div class="main">
+            <h1>Please enter the following values:</h1>
+            <form action="result">
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p>Radius_mean</p>
+                    <input type="text" name="n3">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Texture_mean</p>
+                    <input type="text" name="n4">
+                    </div>  
+                    <div class="col-sm-3">
+                        <p>Perimeter_mean</p>
+                        <input type="text" name="n5">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Area_mean</p>
+                        <input type="text" name="n6">
+                    </div>   
+                </div>
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                    <p>Smoothness_mean</p>
+                    <input type="text" name="n7">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Compactness_mean</p>
+                    <input type="text" name="n8">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Concavity_mean</p>
+                        <input type="text" name="n9">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Concave Points_mean</p>
+                        <input type="text" name="n10">
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p>Symmetry_mean</p>
+                    <input type="text" name="n11">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Fractal_dimension_mean</p>
+                    <input type="text" name="n12">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Radius_se</p>
+                        <input type="text" name="n13">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Texture_se</p>
+                        <input type="text" name="n14">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p>Perimeter_se</p>
+                        <input type="text" name="n15">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Area_se</p>
+                    <input type="text" name="n16">
+                    </div>
+                    <div class="col-sm-3" >
+                        <p>Smoothness_se</p>
+                        <input type="text" name="n17">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Compactness_se</p>
+                        <input type="text" name="n18">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p>Concavity_se</p>
+                    <input type="text" name="n19">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Concave Points_se</p>
+                    <input type="text" name="n20">
+                    </div>
+                    <div class="col-sm-3" >
+                        <p>Symmetry_se</p>
+                        <input type="text" name="n21">
+                    </div>
+                    <div class="col-sm-3" >
+                    <p>Fractal_dimension_se</p>
+                    <input type="text" name="n22">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p>Radius_worst</p>
+                    <input type="text" name="n23">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Texture_worst</p>
+                    <input type="text" name="n24">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Perimeter_worst</p>
+                    <input type="text" name="n25">
+                    </div>
+                    <div class="col-sm-3">
+                        <p>Area_worst</p>
+                        <input type="text" name="n26">
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                    <p>Smoothness_worst</p>
+                    <input type="text" name="n27">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Compactness_worst</p>
+                    <input type="text" name="n28">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Concavity_worst</p>
+                    <input type="text" name="n29">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p>Concave points_worst</p>
+                    <input type="text" name="n30">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Symmetry_worst</p>
+                    <input type="text" name="n31">
+                    </div>
+                    <div class="col-sm-3">
+                    <p>Fractal_Dimension_worst</p>
+                    <input type="text" name="n32">
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="PREDICT">
+                </div>
+            </form>
+            <div class="row">
+                <h2>{{result2}}</h2>
+            </div>
+        </div>
+    </body>
+</html>
